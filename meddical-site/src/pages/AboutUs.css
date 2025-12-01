@@ -1,0 +1,228 @@
+/* src/pages/AboutUs.css */
+.about-us {
+    font-family: Arial, sans-serif;
+  }
+  
+  .hero {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    min-height: 150px;
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #08284a;
+    font-weight: 700;
+  }
+  
+  .hero-content p {
+      font-size: 18px;
+      color: rgba(8,40,74,0.85);
+      margin-bottom: 10px;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+  }
+  .hero .hero-content {
+    position: relative;
+    text-align: left;
+    padding: 40px 50px;
+  }
+  .hero .breadcrumb {
+    color: #274b7a;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  
+  .welcome-section {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    gap: 50px;
+  }
+  
+  .welcome-content {
+    flex: 1;
+  }
+  
+  .welcome-content h2 {
+    font-size: 36px;
+    color: #003366;
+  }
+  
+  .welcome-content h3 {
+    font-size: 24px;
+    color: #0056b3;
+    margin-top: 10px;
+  }
+  
+  .welcome-content p {
+    line-height: 1.6;
+    margin: 20px 0;
+  }
+  
+  .welcome-content ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .welcome-content li {
+    background: url('https://img.icons8.com/ios-filled/15/0056b3/checkmark--v1.png') no-repeat left center;
+    padding-left: 25px;
+    margin-bottom: 10px;
+  }
+  
+  .welcome-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .doctors-section, .news-section {
+    padding: 50px;
+    background-color: #f4f7f9;
+  }
+  
+  .doctors-section h2, .news-section h2 {
+    text-align: center;
+    font-size: 36px;
+    color: #003366;
+    margin-bottom: 40px;
+  }
+  
+  .doctors-grid, .news-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+  }
+  
+  .doctor-card, .news-card {
+    background: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .doctor-card img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .doctor-card h4, .news-card h4 {
+    font-size: 18px;
+    color: #003366;
+  }
+  
+  .doctor-card p {
+    color: #666;
+  }
+  
+  .doctor-card a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .news-card p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* New styles for info bar and shortcuts */
+  .info-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(90deg,#0056b3,#0077e6);
+    color: #fff;
+    padding: 12px 20px;
+    align-items: center;
+  }
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+  }
+  .info-item strong {
+    font-size: 13px;
+    opacity: 0.95;
+  }
+  .info-item span {
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  .shortcut-nav {
+    padding: 12px 20px;
+    background: #fff;
+    border-bottom: 1px solid #e6eef8;
+  }
+  .shortcut-nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    align-items: center;
+  }
+  .shortcut-nav li {
+    color: #003366;
+    font-weight: 600;
+    cursor: default;
+  }
+
+  .news-card .meta {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .news-card .meta span {
+    background: #eaf3ff;
+    color: #0056b3;
+    padding: 6px 10px;
+    border-radius: 16px;
+    font-weight: 700;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 800px) {
+    .welcome-section { flex-direction: column; padding: 30px; }
+    .doctors-grid, .news-grid { flex-direction: column; align-items: stretch; }
+    .info-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .shortcut-nav ul { flex-wrap: wrap; gap: 10px; }
+  }
+
+  /* Trusted section */
+  .trusted-section { padding: 30px 20px; text-align: center; }
+  .trusted-section h3 { color: #003366; font-size: 24px; margin: 0 0 6px; }
+  .trusted-section p { color: #666; margin: 0; }
+
+  /* Contact */
+  .contact-section { padding: 50px 20px; background: #fff; }
+  .contact-grid { display: flex; gap: 20px; justify-content: center; }
+  .contact-card { background: #f8fbff; padding: 18px; border-radius: 8px; width: 320px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
+  .contact-card h4 { margin-top: 0; color: #003366; }
+  .contact-card p { margin: 8px 0; color: #333; }
+  .contact-card input { width: 100%; padding: 8px 10px; margin-top: 8px; border: 1px solid #dbeafc; border-radius: 6px; }
+
+  /* Footer */
+  .site-footer { background: #003366; color: #fff; padding: 30px 20px; margin-top: 30px; }
+  .footer-inner { display: flex; gap: 40px; justify-content: space-between; flex-wrap: wrap; }
+  .footer-inner h4 { margin: 0 0 8px 0; }
+  .footer-inner p { margin: 4px 0; color: #dbeafc; }
+  .copyright { text-align: center; margin-top: 18px; color: #bcd7ff; }
+
+  @media (max-width: 800px) {
+    .contact-grid { flex-direction: column; align-items: center; }
+    .footer-inner { flex-direction: column; gap: 12px; }
+  }
