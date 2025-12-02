@@ -27,16 +27,36 @@ export default function AboutUs() {
 
       {/* Hero Section (banner background) */}
       <section
-        className="hero"
-        style={{ backgroundImage: `url(${welcomeImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-      >
-        <div className="hero-overlay" />
-        <div className="hero-content">
-          <p className="breadcrumb">Home / About</p>
-          <h1>About us</h1>
-        </div>
-      </section>
+  className="hero"
+  style={{
+    backgroundImage: "url('/your-banner-image.jpg')", // <-- put your About banner image here
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "260px",
+    position: "relative",
+    display: "flex",
+    alignItems: "center",
+    paddingLeft: "60px"
+  }}
+>
+  {/* Light White Blur Overlay */}
+  <div
+    style={{
+      position: "absolute",
+      inset: 0,
+      background: "rgba(255,255,255,0.45)",
+      backdropFilter: "blur(3px)"
+    }}
+  ></div>
 
+  {/* Text Content */}
+  <div style={{ position: "relative", zIndex: 2 }}>
+    <p style={{ fontSize: "20px", margin: 0, color: "#0a1d4d" }}>Home / About</p>
+    <h1 style={{ fontSize: "52px", fontWeight: 700, marginTop: "5px", color: "#0a1d4d" }}>
+      About us
+    </h1>
+  </div>
+</section>
       {/* Navigation Shortcuts (visual only) */}
       <nav className="shortcut-nav">
         <ul>
