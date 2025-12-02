@@ -1,0 +1,121 @@
+/* =======================================
+   TOP BAR (White Background)
+   ======================================= */
+
+.topbar {
+  background: white;
+  padding: 12px 0;
+  border-bottom: 1px solid #e8e8e8;
+  font-family: Arial, sans-serif;
+}
+
+/* Main container */
+.topbar-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ===============================
+   LOGO IMAGE (LEFT SIDE)
+   =============================== */
+.topbar-logo img {
+  height: 45px;
+  object-fit: contain;
+}
+
+
+/* ===============================
+   RIGHT SIDE — INFO BLOCKS
+   =============================== */
+.topbar-info {
+  display: flex;
+  gap: 40px; /* space between each info section */
+  align-items: center;
+}
+
+/* Each block (Emergency, Work Hour, Location) */
+.info-block {
+  display: flex;
+  align-items: center;
+}
+
+/* Row layout: icon + text */
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon size */
+.info-icon {
+  width: 22px;
+  height: 22px;
+}
+
+/* Small title text (BLACK) */
+.info-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: black;
+  
+}
+
+/* Value text (BLUE) */
+.info-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0A62FF; /* Figma blue */
+}
+
+/* ============================================
+   RESPONSIVE TOPBAR
+============================================ */
+
+/* Tablet / Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 10px 0;
+  }
+
+  .topbar-container {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .topbar-info {
+    gap: 20px;
+  }
+
+  .info-block {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .info-title {
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 12px;
+  }
+
+  .topbar-info img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .topbar-info {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
