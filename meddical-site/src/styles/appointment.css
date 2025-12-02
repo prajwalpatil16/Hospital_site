@@ -1,0 +1,100 @@
+/* OUTER SECTION */
+.appointment-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 60px 10%;
+  overflow: hidden; /* Important: hides blur overflow */
+}
+
+/* Blur background using ::before */
+.appointment-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("/images/doctor-blur.svg") no-repeat center center;
+  background-size: cover;
+  filter: blur(6px); /* Adjust blur level */
+  
+  z-index: -1; /* Keeps content above blur */
+}
+
+/* LEFT TEXT AREA */
+.appointment-left {
+  width: 45%;
+  color: #183153;
+}
+
+.appointment-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.appointment-left p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5a5a5a;
+}
+
+/* THE BLUE FORM CARD */
+.appointment-card {
+  width: 420px;
+  background: #1F2B6C;
+  color: white;
+  padding: 28px;
+  border-radius: 4px;
+}
+
+/* GRID */
+.appointment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* INPUTS + SELECT */
+.appointment-card input,
+.appointment-card select {
+  width: 100%;
+  padding: 8px 12px;
+  background: #12204B;
+  border: none;
+  color: white;
+  border-radius: 2px;
+  font-size: 14px;
+}
+
+.appointment-card input::placeholder {
+  color: #dce3ff;
+}
+
+/* MESSAGE */
+.appointment-card textarea {
+  margin-top: 15px;
+  width: 100%;
+  height: 90px;
+  background: #12204B;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+/* SUBMIT BAR */
+.submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  background: #D3E3FF;
+  border: none;
+  color: #1F2B6C;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 3px;
+}

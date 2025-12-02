@@ -1,0 +1,135 @@
+/* ===============================
+   INFO CARDS (Top Section)
+================================ */
+
+
+.footer-contact-heading-container {
+  color: rgb(105, 105, 227);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-info-cards {
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.info-card {
+  background: #dce6ff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+
+
+.info-card img {
+  width: 32px;
+  margin-bottom: 12px;
+}
+
+.info-card h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.info-card p {
+  margin: 3px 0;
+  font-size: 14px;
+}
+
+/* ===============================
+   BLUE MAIN FOOTER
+================================ */
+.footer-main {
+  background: #1b2e57;
+  color: white;
+  padding: 60px 0;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.footer-col {
+  width: 22%;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.footer-col h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer-col a,
+.footer-col p {
+  display: block;
+  margin-bottom: 6px;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* ===============================
+   NEWSLETTER
+================================ */
+.newsletter-box {
+  display: flex;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.newsletter-box input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 14px;
+}
+
+.newsletter-box button {
+  background: #3b82f6;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.newsletter-box button img {
+  width: 18px;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 22px;
+  cursor: pointer;
+}
+
+/* ===============================
+   COPYRIGHT
+================================ */
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background: #102040;
+  color: #cbd5e1;
+  font-size: 13px;
+}
