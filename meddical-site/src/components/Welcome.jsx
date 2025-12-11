@@ -1,35 +1,40 @@
-import "../styles/welcome.css";
-
 export default function Welcome() {
   return (
-    <section className="welcome-section">
+    <section className="w-full py-20 bg-gradient-to-br from-[#F6FBFF] to-[#E8F1FF]">
 
-      {/* TOP TEXT AREA */}
-      <div className="welcome-content">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
 
-        <p className="welcome-subtitle">WELCOME TO MEDDICAL</p>
+        {/* IMAGE */}
+        <div className="flex justify-center">
+          <img
+            src="/images/welcome-hero.png"
+            alt="Hospital Team"
+            className="w-full max-w-lg drop-shadow-xl rounded-2xl"
+          />
+        </div>
 
-        <h2 className="welcome-title">
-          A Great Place to Receive Care
-        </h2>
+        {/* TEXT */}
+        <div className="space-y-6">
+          <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold tracking-wide">
+            WELCOME TO MEDDICAL
+          </span>
 
-        <p className="welcome-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          Quisque placerat scelerisque tortor ornare ornare. Convallis felis 
-          vitae tortor augue. Velit nascetur proin massa in. Consequat faucibus 
-          porttitor enim et.
-        </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1F2B6C] leading-tight">
+            Compassionate Care, Trusted by Thousands
+          </h2>
 
-        {/* LEARN MORE BUTTON */}
-        <button className="learn-btn">
-          Learn More →
-        </button>
+          <p className="text-gray-600 text-lg leading-relaxed">
+            With over 25 years of trusted service, Meddical combines advanced
+            medical technology with a highly experienced healthcare team to deliver
+            world-class treatment across all specialties.
+          </p>
 
-      </div>
-
-      {/* IMAGE BELOW */}
-      <div className="welcome-image">
-        <img src="/images/team-large1.svg" alt="Medical Team" />
+          <p className="text-gray-600 text-lg leading-relaxed">
+            From preventive screenings to life-saving procedures, our dedicated
+            doctors ensure every patient receives personalized attention in a
+            safe and comfortable environment.
+          </p>
+        </div>
       </div>
 
     </section>

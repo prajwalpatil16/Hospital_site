@@ -1,11 +1,11 @@
 import Hero from "../components/Hero";
 import Welcome from "../components/Welcome";
 import Specialties from "../components/Specialties";
-import Services from "../components/Services";
+import Services from "../components/ServicesHome";
 
 import Doctors from "../components/Doctors";
 import NewsSection from "../components/NewsSection";
-import AppointmentForm from "../components/AppointmentForm";
+import AppointmentSectionHome from "../components/AppointmentSectionHome";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
       <Services />
       <Doctors />
       <NewsSection />
-      <AppointmentForm />
+      <AppointmentSectionHome />
     </>
   );
 }

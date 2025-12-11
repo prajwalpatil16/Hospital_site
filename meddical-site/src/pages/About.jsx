@@ -1,18 +1,24 @@
-import Doctors from '../components/Doctors';
-import AboutBanner from '../components/AboutBanner';
-import AboutContent from '../components/AboutContent';
-import AboutQuote from '../components/AboutQuote';
-import News from '../components/NewsSection';
-import NewsSection from '../components/NewsSection';
+import PageBanner from "../components/PageBanner.jsx";
+import AboutContent from "../components/AboutContent.jsx";
+import QuoteSection from "../components/QuoteSection.jsx";
+import Doctors from "../components/Doctors.jsx";
+import NewsSection from "../components/NewsSection.jsx";
 
 export default function About() {
   return (
-      <>
-      <AboutBanner />
+    <>
+      <PageBanner
+        title="About Us"
+        breadcrumb="Home / About"
+        image="/images/about-bg.jpg"
+      />
       <AboutContent />
-      <AboutQuote />
+      <QuoteSection 
+        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque placerat scelerisque tortor ornare ornare."
+         author="John Doe"
+      />
       <Doctors />
       <NewsSection />
-      </>
+    </>
   );
 }

@@ -1,16 +1,24 @@
-import AboutQuote from "../components/AboutQuote";
-import Doctors from "../components/Doctors";
+import QuoteSection from "../components/QuoteSection";
+import DoctorsGrid from "../components/DoctorsGrid";
 import NewsSection from "../components/NewsSection";
-import AboutBanner from "../components/AboutBanner";
+import PageBanner from "../components/PageBanner";
+
 
 
 export default function DoctorsPage() {
   return (
     <>
-      <AboutBanner />
-      <Doctors />
-      <Doctors />
-      <AboutQuote />
+      <PageBanner
+              title="Our Doctors"
+              breadcrumb="Home / Doctors"
+              image="/images/i.jpg"
+      />
+      <DoctorsGrid />
+      <QuoteSection 
+        text="Great doctors treat more than just symptoms—they treat people."
+        author="Dr. Smith"
+      />
+
       <NewsSection />
     </>
   );

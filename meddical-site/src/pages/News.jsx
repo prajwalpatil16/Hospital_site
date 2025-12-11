@@ -1,7 +1,16 @@
+import Doctors from "../components/Doctors";
+import PageBanner from "../components/PageBanner";
+import Footer from "../components/Footer";
+
+
 export default function News() {
   return (
-    <div style={{ padding: "50px" }}>
-      <h1>News Page</h1>
-    </div>
+    <>
+      <PageBanner
+        title="Our News"
+        breadcrumb="Home / News"
+        image="/images/doctor-blur.svg"
+      />
+    </>
   );
 }

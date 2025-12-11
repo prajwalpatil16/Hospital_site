@@ -1,54 +1,56 @@
-import "../styles/hero.css";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="relative w-full bg-blue-50 py-16 overflow-hidden">
 
-      <div className="hero-container">
+      {/* Background Image for Mobile */}
+      <img 
+        src="/images/doctor.png"
+        alt="doctor bg"
+        className="absolute inset-0 w-full h-full object-cover opacity-20 md:hidden" 
+      />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10 
+                      flex flex-col md:flex-row items-center justify-between">
 
         {/* LEFT CONTENT */}
-        <div className="hero-left">
-          <p className="hero-subtitle">CARING FOR LIFE</p>
+        <div className="md:w-1/2 w-full space-y-5">
+          <p className="text-blue-600 tracking-widest font-semibold">
+            CARING FOR LIFE
+          </p>
 
-          <h1 className="hero-title">
-            Leading the Way <br />
-            in Medical Excellence
+          <h1 className="text-4xl md:text-5xl font-bold text-[#1F2B6C] leading-tight">
+            Leading the Way <br /> in Medical Excellence
           </h1>
 
-          <button className="hero-btn">Our Services</button>
+          <p className="text-gray-600 leading-relaxed">
+            Trusted healthcare powered by expert doctors, modern technology,
+            and compassionate care for you and your family.
+          </p>
 
-          {/* TEAM + APPOINTMENT BOXES */}
-          <div className="hero-bottom-row">
+          <Link to="/appointment">
+            <button className="bg-blue-600 text-white px-8 py-3 rounded-full mt-4 shadow-md hover:bg-blue-700">
+              Book an Appointment
+            </button>
+          </Link>
 
-            {/* Team wide image */}
-            <img 
-              src="/images/team.png"
-              alt="team"
-              className="hero-team-img"
-            />
-
-            {/* Appointment box 1 */}
-            <div className="hero-box light-box">
-              <p>Book an Appointment</p>
-            </div>
-
-            {/* Appointment box 2 */}
-            <div className="hero-box dark-box">
-              <p>Book an Appointment</p>
-              <img src="/icons/appointment.png" alt="icon" />
-            </div>
-
-          </div>
-
+          <img
+            src="/images/team.png"
+            alt="team"
+            className="w-64 md:w-72 rounded-lg mt-6"
+          />
         </div>
 
-        {/* RIGHT DOCTOR IMAGE */}
-        <div className="hero-right">
-          <img src="/images/doctor.png" alt="doctor" />
+        {/* RIGHT DOCTOR IMAGE - DESKTOP */}
+        <div className="hidden md:flex md:w-1/2 justify-center">
+          <img
+            src="/images/doctor.png"
+            alt="doctor"
+            className="w-80 md:w-[420px] object-contain"
+          />
         </div>
-
       </div>
-
     </section>
   );
 }

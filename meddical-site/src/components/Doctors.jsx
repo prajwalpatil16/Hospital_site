@@ -1,48 +1,61 @@
-import "../styles/doctors.css";
+import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Doctors() {
   const doctors = [
-    { name: "Doctor's Name", specialty: "NEUROLOGY", img: "/images/doc1.svg" },
-    { name: "Doctor's Name", specialty: "NEUROLOGY", img: "/images/doc2.svg" },
-    { name: "Doctor's Name", specialty: "NEUROLOGY", img: "/images/doc3.svg" }
+    { id: 1, name: "Dr. Sarah Mitchell", specialty: "Neurology", img: "/images/doc1.svg" },
+    { id: 2, name: "Dr. Kevin Rogers", specialty: "Cardiology", img: "/images/doc2.svg" },
+    { id: 3, name: "Dr. Priya Sharma", specialty: "Orthopedics", img: "/images/doc3.svg" },
+    { id: 4, name: "Dr. Ana Rodriguez", specialty: "Dermatology", img: "/images/doc1.svg" },
+    { id: 5, name: "Dr. Mark Wilson", specialty: "Urology", img: "/images/doc2.svg" },
+    { id: 6, name: "Dr. Emily Carter", specialty: "Oncology", img: "/images/doc3.svg" },
   ];
 
   return (
-    <section className="doctors-section">
+    <section className="w-full py-5 bg-white">
+      <p className="text-center text-blue-600 tracking-wide font-semibold">
+        TRUSTED CARE
+      </p>
 
-      <p className="doctors-subtitle">TRUSTED CARE</p>
-      <h2 className="doctors-title">Our Doctors</h2>
+      <h2 className="text-center text-3xl md:text-4xl font-bold text-[#1F2B6C] mt-2 mb-10">
+        Our Doctors
+      </h2>
 
-      <div className="doctors-grid">
-        {doctors.map((doc, i) => (
-          <div key={i} className="doctor-card">
+      <div className="max-w-6xl mx-auto px-6">
+        <Swiper
+          modules={[Navigation, Pagination]}
+          spaceBetween={30}
+          navigation
+          pagination={{ clickable: true }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {doctors.map((doc) => (
+            <SwiperSlide key={doc.id}>
+              <Link to={`/doctors`}>
+                <div className="bg-white shadow-lg rounded-xl hover:shadow-2xl duration-300 overflow-hidden">
+                  <img src={doc.img} className="w-full h-72 object-fit" />
 
-            <img src={doc.img} alt={doc.name} className="doctor-img" />
-
-            <div className="doctor-info">
-              <h3>{doc.name}</h3>
-              <p className="speciality">{doc.specialty}</p>
-
-              <div className="social-icons">
-                <img src="/icons/linkedin.svg" />
-                <img src="/icons/facebook.svg" />
-                <img src="/icons/insta.svg" />
-              </div>
-
-              <button className="profile-btn">View Profile</button>
-            </div>
-
-          </div>
-        ))}
+                  <div className="bg-white text-center">
+                    <h3 className="text-xl font-bold text-[#1F2B6C]">{doc.name}</h3>
+                    <p className="text-blue-600 text-sm tracking-widest mt-1">
+                      {doc.specialty}
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-
-      {/* Pagination dots */}
-      <div className="dots">
-        <span className="dot active"></span>
-        <span className="dot"></span>
-        <span className="dot"></span>
-      </div>
-
     </section>
   );
 }

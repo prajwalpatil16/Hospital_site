@@ -1,13 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import "../styles/header.css";
 
 export default function Header() {
   const [showSearch, setShowSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const searchRef = useRef(null);
 
-  // Close search when clicking outside
+  // Close search on outside click
   useEffect(() => {
     function handleOutside(e) {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -19,53 +18,62 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="header">
-      <div className="header-container">
+    <header className="w-full bg-[#01075C] text-white shadow-md z-40">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
         {/* LOGO */}
-        <div className="logo">
+        <div className="text-2xl font-bold">
           <Link to="/">🏥</Link>
         </div>
 
         {/* NAV LINKS — DESKTOP */}
-        <nav className="desktop-nav">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/doctors">Doctors</Link>
-          <Link to="/news">News</Link>
-          <Link to="/contact">Contact</Link>
+        <nav className="hidden md:flex items-center gap-8 text-white">
+          <Link className="hover:text-blue-300" to="/">Home</Link>
+          <Link className="hover:text-blue-300" to="/about">About</Link>
+          <Link className="hover:text-blue-300" to="/services">Services</Link>
+          <Link className="hover:text-blue-300" to="/doctors">Doctors</Link>
+          <Link className="hover:text-blue-300" to="/news">News</Link>
+          <Link className="hover:text-blue-300" to="/contact">Contact</Link>
         </nav>
 
-        {/* RIGHT SIDE GROUP */}
-        <div className="right-actions">
+        {/* RIGHT SECTION */}
+        <div className="flex items-center gap-4">
 
-          {/* SEARCH */}
-          <div className="search-wrapper" ref={searchRef}>
+          {/* Search */}
+          <div className="relative flex items-center" ref={searchRef}>
             <img
               src="/icons/search.png"
-              className="search-icon"
               alt="search"
+              className="w-5 cursor-pointer"
               onClick={() => setShowSearch(!showSearch)}
             />
+
             {showSearch && (
               <input
                 type="text"
                 placeholder="Search..."
-                className="search-input"
+                className="ml-2 px-3 py-1 rounded-md text-black text-sm w-40 border border-gray-300 focus:outline-none"
                 autoFocus
               />
             )}
           </div>
 
-          {/* APPOINTMENT */}
+          {/* Appointment Button */}
           <Link to="/appointment">
-            <button className="appointment-btn">Appointment</button>
+            <button className="hidden md:block bg-blue-500 px-5 py-2 rounded-full hover:bg-blue-600 transition">
+              Appointment
+            </button>
           </Link>
 
-          {/* HAMBURGER (Mobile Only) */}
+           <Link to="/login">
+            <button className="hidden md:block bg-blue-500 px-5 py-2 rounded-full hover:bg-blue-600 transition">
+             Login
+           </button>
+          </Link>
+
+          {/* Hamburger Menu */}
           <div
-            className="hamburger"
+            className="md:hidden text-3xl cursor-pointer"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             ☰
@@ -73,9 +81,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE NAV */}
       {menuOpen && (
-        <nav className="mobile-nav">
+        <div className="md:hidden bg-[#020A70] text-white flex flex-col px-6 py-4 space-y-3">
+
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/about" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link>
@@ -84,11 +93,11 @@ export default function Header() {
           <Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link>
 
           <Link to="/appointment">
-            <button className="mobile-appointment-btn">
+            <button className="mt-2 w-full bg-blue-500 py-2 rounded-full hover:bg-blue-600 transition">
               Appointment
             </button>
           </Link>
-        </nav>
+        </div>
       )}
     </header>
   );
